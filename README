@@ -3,6 +3,10 @@ in an approximately 12 hour period for a programming competition at the
 University of Illinois in Champaign. For the amount of time invested, I
 am pretty proud of our accomplishment.
 
+It runs entirely in the web browser using HTML5's canvas element and
+javascript. Best viewed with Google Chrome, but we tried to be as
+browser independent as possible.
+
 Work Distribution:
 Jon Pichetti - Worked on sound engine, loading screen, and full screen mode
 Priten Vora - Artwork
