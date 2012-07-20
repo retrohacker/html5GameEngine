@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>FOR SCIENCE!</title>
+	
+	<style>
+	html{width:100%;height:100%;min-width:1000px;min-height:1000px;}
+	body{overflow:hidden;margin:0;position:relative;min-width:1000px;min-height:1000px;}
+	canvas{background-color:#000;}
+	#feedback,#framesLoaded{position:absolute;bottom:0;color:#fff;}
+	#feedback{right:0;}
+	#framesLoaded{left:0;}
+	</style>
+	
+	<script type="text/javascript">
+	var allPressed=new Array();
+	var currentKey = 0;
+	window.addEventListener('load',function(){
+		document.onkeydown=function(){
+			var key=event.keyCode;
+			currentKey = event.keyCode;
+			//processInput(key);
+			if(key!=allPressed[allPressed.length-1]){allPressed.push(key);}
+			//document.getElementById("feedback").innerHTML=currentKey;
+		}
+		document.onkeyup=function(){
+			//processInput();
+			currentKey = 0;
+			allPressed.pop()
+			//1document.getElementById("feedback").innerHTML=currentKey;
+		}
+		
+		window.addEventListener('resize',function(){
+		canvas=document.getElementById("myCanvas");
+		canvas.width=window.innerWidth;
+		canvas.height=window.innerHeight;	
+		},false);
+	},false);
+	</script>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="800" height="800">Your browser doesn't support this RPG.</canvas>
+		<div id="framesLoaded"></div>
+		<div id="feedback"></div>
+		
+		<!--Global Variables MUST BE LOADED FIRST!-->
+		<script type="text/javascript" src="js/globalVariables.js"></script> 
+		<!--BOOT LOADER LOADS THE FILES FROM GLOBAL VARIABLES!!! MUST COME
+			BEFORE ANY FILE THAT REFERENCES GLOBAL VARIABLES!!!-->
+		<script type="text/javascript" src="js/bootloader.js"></script>
+		<script type="text/javascript" src="js/gameState.js"></script>
+		<script type="text/javascript" src="js/drawAnimation.js"></script>
+		<script type="text/javascript" src="js/renderObjects.js"></script>
+		<script type="text/javascript" src="js/animatePlayer.js"></script>
+		<script type="text/javascript" src="js/renderTerrain.js"></script>
+		<script type="text/javascript" src="js/renderFrame.js"></script>
+
+	</body>
+</html>
